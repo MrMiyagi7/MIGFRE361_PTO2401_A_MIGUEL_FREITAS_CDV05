@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.nav-bar-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 6rem;
+}
+
+#logo > img {
+  width: 60%;
+}
+#logo {
+  width: 15%;
+}
+
+#nav-links {
+  margin: auto;
+  font-size: 1.5rem;
+}
+
+#nav-links > ul {
+  display: flex;
+  gap: 8rem;
+  list-style: none;
+}
