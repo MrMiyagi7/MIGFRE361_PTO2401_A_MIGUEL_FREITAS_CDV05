@@ -1,27 +1,63 @@
+/* Variables */
+:root {
+  --primary: #0a8116;
+  --secondary: #0a1d26;
+  --tertiary: #3b3d22;
+  --accents: #657d27;
+  --buttons: #003554;
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  background-color: var(--primary);
+  color: var(--secondary);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+#landing-content > p {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.about-text > p {
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .nav-bar-container {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: start;
-  align-items: center;
-  height: 6rem;
+  align-items: start;
+  height: 10rem;
+  background-image: url(./assets/wave-haikei12.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  z-index: 100;
 }
 
 #logo > img {
-  width: 60%;
+  width: 8rem;
 }
 #logo {
-  width: 15%;
+  margin-left: 1.5rem;
+  margin-top: 0.9rem;
 }
 
 #nav-links {
-  margin: auto;
+  margin-inline: auto;
   font-size: 1.5rem;
 }
 
@@ -29,4 +65,664 @@ body {
   display: flex;
   gap: 8rem;
   list-style: none;
+}
+
+#landing-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#miguel-img > img {
+  width: 65%;
+}
+
+#miguel-img {
+  display: flex;
+  justify-content: center;
+}
+
+#landing-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 40%;
+}
+#landing-content > h1 {
+  font-size: 4rem;
+}
+
+#landing-content > h2 {
+  font-size: 2rem;
+}
+#landing-content > p {
+  font-size: 1rem;
+}
+
+#social-container {
+  display: flex;
+  align-items: center;
+}
+
+.social-card {
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 40px;
+  height: 50px;
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 1.2s;
+  border-radius: 15px 0 15px 0px;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 1.2s;
+}
+/* github*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 1.2s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 1.2s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #f90101;
+  transition-duration: 1.2s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 1.2s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+.GithubSvg {
+  width: 25px;
+}
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 1.2s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--secondary);
+  background-color: var(--secondary);
+  overflow: hidden;
+  border-radius: 15px 0 15px 0px;
+}
+
+.button,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(22px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--buttons);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.button .svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.button:hover {
+  background: var(--buttons);
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: var(--buttons);
+}
+
+.button:active {
+  border: 1px solid var(--buttons);
+}
+
+#about {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url(./assets/wave-haikeibot.svg),
+    url(./assets/wave-haikeibot2.svg), url(./assets/wave-haikei11.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 55rem;
+  margin-top: 5rem;
+}
+
+#about > p {
+  width: 15%;
+}
+
+.picture-card {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 4px;
+  background: transparent;
+  display: flex;
+  gap: 5px;
+  padding: 0.4em;
+}
+
+.picture-card p {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.5s;
+  background: var(--secondary);
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture-card p:hover {
+  flex: 4;
+}
+
+.picture-card p span {
+  min-width: 14em;
+  padding: 0.5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.picture {
+  max-width: 100%;
+}
+
+.picture-card p:hover span {
+  transform: rotate(0);
+}
+
+.golf-ball {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.5s ease; /* Smooth transition for shrinking */
+}
+
+.golf-ball > img {
+  width: 20rem;
+}
+
+.golf-ball > span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  transition: transform 0.5s ease;
+}
+
+.golf-ball:hover {
+  transform: scale(0.5);
+}
+
+/* Small golf balls */
+.small-ball {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  opacity: 0; /* Initially hidden */
+  transform: scale(0) translate(0, 0); /* Start at scale 0 inside the large ball */
+  transition: transform 1s ease, opacity 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills {
+  position: absolute;
+  color: var(--secondary);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  z-index: 2; /* Make sure text stays on top of the ball */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease;
+}
+
+/* Positioning the small golf balls */
+.small-ball1 {
+  top: 50%;
+  left: 50%;
+}
+.small-ball2 {
+  top: 50%;
+  left: 50%;
+}
+.small-ball3 {
+  top: 50%;
+  left: 50%;
+}
+.small-ball4 {
+  top: 50%;
+  left: 50%;
+}
+.small-ball5 {
+  top: 50%;
+  left: 50%;
+}
+.small-ball6 {
+  top: 50%;
+  left: 50%;
+}
+.small-ball7 {
+  top: 50%;
+  left: 50%;
+}
+.small-ball8 {
+  top: 50%;
+  left: 50%;
+}
+
+/* Hover effect for rolling out small balls */
+.golf-ball:hover .small-ball {
+  opacity: 1;
+  transform: scale(1); /* Scale to full size */
+}
+
+.golf-ball:hover .small-ball1 {
+  transform: scale(1) translate(-25rem, -25rem); /* Top-left */
+}
+
+.golf-ball:hover .small-ball2 {
+  transform: scale(1) translate(20rem, -20rem); /* Top-right */
+}
+
+.golf-ball:hover .small-ball3 {
+  transform: scale(1) translate(-23rem, 15rem); /* Bottom-left */
+}
+
+.golf-ball:hover .small-ball4 {
+  transform: scale(1) translate(16rem, 12rem); /* Bottom-right */
+}
+
+.golf-ball:hover .small-ball5 {
+  transform: scale(1) translate(-20rem, 0); /* Left */
+}
+
+.golf-ball:hover .small-ball6 {
+  transform: scale(1) translate(13rem, -4rem); /* Right */
+}
+
+.golf-ball:hover .small-ball7 {
+  transform: scale(1) translate(-6rem, -20rem); /* Top */
+}
+
+.golf-ball:hover .small-ball8 {
+  transform: scale(1) translate(3rem, 13rem); /* Bottom */
+}
+
+.golf-ball:hover .skills {
+  opacity: 1; /* Make the text visible only on hover */
+}
+.small-ball > img {
+  width: 15rem;
+}
+
+.about-text {
+  max-width: 20rem;
+}
+
+#projects {
+  height: 55rem;
+  background-image: url(./assets/wave-haikeitop2.svg),
+    url(./assets/wave-haikeitop.svg), url(./assets/wave-haikei10.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #0a8116;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.golf-green {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10rem;
+}
+
+.putt {
+  position: absolute;
+  bottom: -20rem; /* Adjust this value to align with the hole */
+  left: 10%;
+  z-index: 2;
+  /* Adjust this value for the starting position of the ball */
+}
+
+.putt > img {
+  width: 6rem;
+  transition: transform 2s ease;
+  cursor: pointer;
+  /* animation: rollToHole 5s ease forwards; */
+}
+.hole {
+  position: absolute;
+  bottom: -40rem;
+  right: -5rem; /* Adjust this value for positioning the hole */
+}
+
+/* Keyframe for the rolling animation */
+@keyframes rollToHole {
+  0% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(74rem) translateY(11rem) rotate(720deg) scale(0.5); /* Adjust distance and scaling */
+    opacity: 100;
+  }
+  100% {
+    transform: translateY(12rem) translateX(75rem) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Add this class when clicked */
+.roll {
+  animation: rollToHole 5s ease forwards; /* Make the ball roll and shrink */ /* Fade out the ball at the end of the animation */
+}
+
+/* Putt label with arrow */
+.putt-label {
+  position: absolute;
+  bottom: -16rem; /* Positioned above the ball */
+  left: 9%;
+  text-align: center;
+  /* animation: bounce 0.5s infinite alternate; */
+}
+
+.putt-label span {
+  background-color: var(--accents);
+  color: var(--secondary);
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--accents);
+  margin: 0 auto;
+}
+
+/* Small animation for when hovered over the ball */
+.putt-container:hover .putt-label {
+  animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+
+/* Project cards and ball roll */
+.project-card {
+  position: absolute;
+  width: 15rem;
+  height: 18rem;
+  padding: 1rem;
+  background-color: white;
+  border: 2px solid #ccc;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card1 {
+  bottom: -12rem;
+  left: 20%;
+}
+
+.card2 {
+  bottom: -17rem;
+  left: 40%;
+}
+
+.card3 {
+  bottom: -22rem;
+  left: 60%;
+}
+
+/* Show project cards during animation */
+.putt.roll + .card1,
+.putt.roll + .card2,
+.putt.roll + .card3 {
+  opacity: 1;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.modal-content img {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  right: 35%;
+  color: #1b1b1b;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-content a {
+  color: #0a8116;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.modal-content a:hover {
+  text-decoration: underline;
+}
+
+/* Basic layout and styling */
+.golf-scorecard-form {
+  background-color: #f7f5e6;
+  border: 2px solid #0a8116;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 10rem auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.golf-scorecard-form h2 {
+  text-align: center;
+  color: #0a8116;
+  font-family: "Georgia", serif;
+  margin-bottom: 1.5rem;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: "Arial", sans-serif;
+  color: #2f4f2f;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+input[type="text"],
+input[type="email"] {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+textarea {
+  resize: none;
+}
+
+button[type="submit"] {
+  background-color: #0a8116;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Arial", sans-serif;
+}
+
+button[type="submit"]:hover {
+  background-color: #086d13;
+}
+
+/* Styling the scorecard like a golf card */
+.golf-scorecard-form {
+  background-image: linear-gradient(white 50%, rgba(0, 128, 0, 0.1) 50%);
+  background-size: 100% 4rem; /* Creates horizontal lines like a scorecard */
+  background-position: 0 0;
+}
+
+.golf-scorecard-form h2 {
+  border-bottom: 2px solid #0a8116;
+  padding-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  background-color: #f7f5e6;
+}
+
+.form-field input,
+.form-field textarea {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
